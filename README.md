@@ -1,6 +1,10 @@
 # Data Lakehouse on Azure Using Apache Iceberg
 
-A medallion-style (Bronze → Silver → Iceberg) data lakehouse on Azure, built on the NYC Parking Violations dataset. Raw CSV data in Azure Blob/ADLS storage is processed with Azure Databricks and stored as Delta / Apache Iceberg tables, with the Azure infrastructure provisioned by Terraform.
+A medallion-style (Bronze → Silver → Gold (Iceberg)) data lakehouse on Azure, built on the NYC Parking Violations dataset. Raw CSV data in Azure Blob/ADLS storage is processed with Azure Databricks and stored as Delta / Apache Iceberg tables, with the Azure infrastructure provisioned by Terraform.
+
+## Architecture
+
+![Architecture Diagram](Architecture_Diagram.png)
 
 ## Repository structure
 
@@ -23,7 +27,7 @@ A medallion-style (Bronze → Silver → Iceberg) data lakehouse on Azure, built
 
 1. Provision the Azure resources: see [Project_Code/Terraform/Instructions.md](Project_Code/Terraform/Instructions.md).
 2. Download the NYC Parking Violations CSV (NYC Open Data, "Parking Violations Issued", or Kaggle "NYC Parking Tickets") and upload it to your Azure Blob/ADLS container.
-3. Run the notebooks in `Project_Code/Code/` in order: Bronze → Silver → Iceberg.
+3. Run the notebooks in `Project_Code/Code/` in order: Bronze → Silver → Gold (Iceberg).
 4. For Databricks serverless, set `storage_account`, `container` and `file_path` in the first cell of `Bronze_Layer_Databricks_Serverless.ipynb` and grant access through a Unity Catalog external location.
 
 ## Dataset columns
