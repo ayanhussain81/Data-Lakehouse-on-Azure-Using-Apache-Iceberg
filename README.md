@@ -6,7 +6,7 @@ A medallion-style (Bronze → Silver → Iceberg) data lakehouse on Azure, built
 
 ```
 .
-├── Data/                         Dataset notes (the ~1.2 GB CSV is not tracked in git)
+├── Data/                         parking_data.csv (sample) + dataset notes (full ~1.2 GB CSV not tracked)
 └── Project_Code/
     ├── Code/
     │   ├── Bronze_Layer.ipynb                       Raw ingestion (classic cluster)
@@ -28,7 +28,7 @@ A medallion-style (Bronze → Silver → Iceberg) data lakehouse on Azure, built
 
 ## Dataset columns
 
-The dataset has 41 columns; each row is one parking ticket.
+The dataset has 43 columns (listed below as 41 entries, since the three Street Code columns are grouped); each row is one parking ticket. A 1,119-row sample is included in [Data/parking_data.csv](Data/parking_data.csv).
 
 | # | Column | Description |
 |---|--------|-------------|
